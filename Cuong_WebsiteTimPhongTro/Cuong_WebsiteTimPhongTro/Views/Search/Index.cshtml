@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<h2>Index</h2>
+@*<br />
+    <br />
+    <br />
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+           $("#txtSearch").autocomplete({
+
+                source: '@Url.Action("GetProducts", "Search")',
+
+                minLength: 1
+
+            });
+        });
+
+    </script>
+
+    <div class="form-group">
+        SEARCH:
+        @Html.TextBox("searchTerm", null, new { id = "txtSearch", Class = "autosuggest" })
+    </div>*@
+
+<div>
+    <label>Country Search</label>
+    <input class="form-control" id="searchInput" />
+</div>
+<script>
+    $("#searchInput").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: '@Url.Action("GetSearchValue", "Search")',
+                dataType: "json",
+                data: { search: $("#searchInput").val() },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return { label: item.ProductName, value: item.ProductName };
+                    }));
+                },
+                error: function (xhr, status, error) {
+                    alert("Error");
+                }
+            });
+        }
+    });
+</script>
+

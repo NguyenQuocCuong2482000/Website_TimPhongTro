@@ -1,0 +1,7 @@
+﻿#map {
+    /*position: absolute; position: absolute trong CSS có tác dụng giúp định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài, hoặc ít nhất là theo cửa sổ trình duyệt*/
+    width: 1170px;
+    height: 700px;
+    background-color: #ddd;
+    /*margin: 100px 0px 0px 100px;*/ /*trên phải dưới trái*/
+}
