@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Cuong_WebsiteTimPhongTro.Models;
 using PagedList;
 
+
 namespace Cuong_WebsiteTimPhongTro.Controllers
 {
     public class HomeController : Controller
