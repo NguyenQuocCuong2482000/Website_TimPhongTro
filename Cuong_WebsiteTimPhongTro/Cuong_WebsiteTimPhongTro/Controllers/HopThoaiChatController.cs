@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Cuong_WebsiteTimPhongTro.Models;
 namespace Cuong_WebsiteTimPhongTro.Controllers
 {
-
+ 
     public class HopThoaiChatController : Controller
     {
         public OnlineTimPhongTroEntities db = new OnlineTimPhongTroEntities();
